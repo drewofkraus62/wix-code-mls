@@ -115,7 +115,7 @@ export async function post_batchCheckUpdateState(request) {
     console.log('batchCheckUpdateState input items:', items.length);
     let queries = items.map(item => wixData.query(collection).eq('_id', item.id));
     console.log('batchCheckUpdateState input queries:', items.length);
-    let query = queries.reduce((accuQuery, query) => (!!accuQuery)?accuQuery.or(query): query);
+    //let query = queries.reduce((accuQuery, query) => (!!accuQuery)?accuQuery.or(query): query);//
     let result = [];
     let itemsToUpdate = [];
     let cOk =0, cNeedUpdate = 0, cNotFound = 0;
